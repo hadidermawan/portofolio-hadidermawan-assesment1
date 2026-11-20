@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional Portfolio Hadi Dermawan">
+<title>Hadi Dermawan | Professional Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f3f6fb;
+    --panel: #ffffff;
+    --panel2: #eaf0f8;
+    --text: #17243a;
+    --muted: #64748b;
+    --accent: #315fce;
+    --blue: #13a89e;
+    --border: #dce4ef;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    background-image:
+        radial-gradient(circle at 8% 8%, rgba(49,95,206,.07), transparent 28%),
+        radial-gradient(circle at 92% 30%, rgba(19,168,158,.06), transparent 25%);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+h1, h2, h3, .brand {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 5px 24px rgba(23,36,58,.055);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: clamp(10px,1.5vw,22px);
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.small-btn, .menu-btn {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--text);
+}
+
+.small-btn:hover, .menu-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.menu-btn {
+    display: none;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 680px;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    align-items: center;
+    gap: clamp(35px,7vw,100px);
+    padding-top: 120px;
+}
+
+.eyebrow, .section-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(54px,7vw,82px);
+    letter-spacing: -3px;
+    line-height: 1.02;
+    margin: 18px 0;
+}
+
+.gradient {
+    background: linear-gradient(110deg,#315fce 10%,#13a89e 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn {
+    padding: 13px 19px;
+    border-radius: 11px;
+    border: 1px solid var(--border);
+    display: inline-block;
+    font-weight: 600;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    box-shadow: 0 8px 18px rgba(49,95,206,.18);
+}
+
+.btn:not(.primary) {
+    background: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-info {
+    display: flex;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.hero-info span {
+    background: rgba(255,255,255,.72);
+    border: 1px solid var(--border);
+    padding: 7px 10px;
+    border-radius: 8px;
+}
+
+/* FOTO PROFIL */
+
+.profile-art {
+    width: min(100%,330px);
+    height: 390px;
+    border-radius: 28px;
+    margin: auto;
+    overflow: hidden;
+    background: #e5edf8;
+    border: 8px solid #fff;
+    box-shadow:
+        0 24px 55px rgba(23,36,58,.14),
+        18px 18px 0 rgba(49,95,206,.10);
+}
+
+.profile-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* GENERAL SECTION */
+
+section {
+    padding: 76px 0;
+}
+
+.section-title {
+    font-size: clamp(30px,5vw,43px);
+    letter-spacing: -1.2px;
+    margin: 9px 0 24px;
+}
+
+.section-desc {
+    color: var(--muted);
+    max-width: 760px;
+    margin-top: -12px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(23,36,58,.045);
+    transition: transform .22s, box-shadow .22s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(23,36,58,.08);
+}
+
+.card h3 {
+    font-size: 18px;
+    letter-spacing: -.25px;
+    margin-bottom: 10px;
+}
+
+.card p, .card li {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.card p + p {
+    margin-top: 7px;
+}
+
+.tag {
+    display: inline-block;
+    background: #edf2ff;
+    color: #315fce;
+    border: 1px solid #dce6ff;
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 5px 4px 0 0;
+}
+
+/* CURRICULUM VITAE */
+
+.cv-block {
+    margin-bottom: 18px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-block:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cv-block h3 {
+    color: var(--accent);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.cv-list {
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cv-list li {
+    margin: 5px 0;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: #40516b;
+    background: #fff;
+    font-size: 13px;
+}
+
+/* PROJECTS */
+
+.project {
+    position: relative;
+    overflow: hidden;
+}
+
+.project::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(var(--accent),var(--blue));
+}
+
+.project-number {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.project h3 {
+    margin: 10px 0;
+}
+
+.project .detail {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.project.open .detail {
+    display: block;
+}
+
+.toggle {
+    margin-top: 16px;
+    padding: 8px 0;
+    background: transparent;
+    border: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.toggle:hover {
+    color: var(--blue);
+}
+
+/* EXPERIENCE */
+
+.timeline {
+    border-left: 2px solid #d7e2f4;
+    padding-left: 22px;
+    margin-left: 7px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 19px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px #edf2ff;
+}
+
+.timeline-item h4 {
+    font-size: 15px;
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* CERTIFICATE */
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(120deg,#fff 55%,#eef4ff);
+}
+
+.cert-link {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 7px 16px rgba(49,95,206,.18);
+}
+
+.cert-link:hover {
+    background: #244da9;
+}
+
+/* ASSESSMENT QUESTIONS */
+
+.question {
+    margin-bottom: 11px;
+}
+
+.question summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: .2s;
+}
+
+.question summary:hover {
+    border-color: #9eb5e9;
+    color: var(--accent);
+}
+
+.question[open] summary {
+    border-color: #b9c9ed;
+    color: var(--accent);
+    border-radius: 12px 12px 0 0;
+}
+
+.question p {
+    padding: 14px 18px;
+    color: var(--muted);
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 0;
+    border-radius: 0 0 12px 12px;
+    line-height: 1.85;
+}
+
+/* COVER LETTER */
+
+.letter {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.letter p {
+    margin-bottom: 12px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 13px;
+}
+
+.contact-item {
+    padding: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    overflow-wrap: anywhere;
+    transition: .2s;
+}
+
+.contact-item:hover {
+    border-color: #a9bce8;
+    transform: translateY(-2px);
+}
+
+.contact-item span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.contact-item strong {
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    background: #eaf0f8;
+    margin-top: 30px;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: .65s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+
+    .nav-inner {
+        height: 68px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--panel);
+        flex-direction: column;
+        box-shadow: 0 12px 20px rgba(23,36,58,.08);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 115px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .hero-info {
+        justify-content: center;
+    }
+
+    .profile-art {
+        width: 220px;
+        height: 270px;
+    }
+
+    .grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+}
+
+@media(max-width:480px) {
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .small-btn {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-bottom: 35px;
+    }
+
+    .hero-info span {
+        font-size: 11px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    section {
+        padding: 58px 0;
+    }
+}
+
+/* PRINT PDF */
+
+@media print {
+
+    nav,
+    .hero-buttons,
+    .toggle,
+    .small-btn,
+    .menu-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        background-image: none;
+        color: #111;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .profile-art {
+        display: none;
+    }
+
+    section {
+        padding: 28px 0;
+        break-inside: avoid;
+    }
+
+    .card,
+    .contact-item,
+    .question summary {
+        background: white;
+        color: #111;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .card p,
+    .card li,
+    .section-desc,
+    .timeline-item p,
+    .letter,
+    .question p {
+        color: #333;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .project .detail {
+        display: block !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="container nav-inner">
+
+        <a href="#home" class="brand">
+            HADI <span>DERMAWAN</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#company">Perusahaan</a>
+            <a href="#cv">CV</a>
+            <a href="#projects">Proyek</a>
+            <a href="#experience">Pengalaman</a>
+            <a href="#certificate">Sertifikat</a>
+            <a href="#career">Karier</a>
+            <a href="#contact">Kontak</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="small-btn" onclick="window.print()">
+                Simpan PDF
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="container hero" id="home">
+
+    <div>
+
+        <div class="eyebrow">
+            Professional Portfolio · 2026
+        </div>
+
+        <h1>
+            Hadi<br>
+            <span class="gradient">Dermawan.</span>
+        </h1>
+
+        <p>
+            Mahasiswa D3 Teknologi Telekomunikasi di Telkom University Bandung yang memiliki minat pada pengembangan sistem berbasis web, solusi digital, dan teknologi telekomunikasi. Memiliki pengalaman dalam pengembangan aplikasi web serta pengelolaan basis data. Adaptif, komunikatif, dan mampu bekerja sama dalam tim, dengan semangat untuk terus belajar dan mengembangkan kompetensi di bidang teknologi.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#cv" class="btn primary">
+                Lihat Curriculum Vitae ↗
+            </a>
+
+            <a href="#contact" class="btn">
+                Hubungi Saya
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+            <span>⌖ Bandung, Jawa Barat, Indonesia</span>
+            <span>✉ hadidermawan@gmail.com</span>
+            <span>☎ 085295210574</span>
+        </div>
+
+    </div>
+
+    <!-- FOTO PROFIL -->
+    <div class="profile-art">
+        <img src="foto-hadi.jpg" alt="Foto Hadi Dermawan">
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- TARGET PERUSAHAAN -->
+<section class="container reveal" id="company">
+
+    <div class="section-label">
+        Application Target
+    </div>
+
+    <h2 class="section-title">
+        Target Perusahaan
+    </h2>
+
+    <div class="card">
+
+        <h3>
+            PT Industri Telekomunikasi Indonesia (Persero)
+        </h3>
+
+        <p>
+            PT INTI merupakan perusahaan yang bergerak di bidang
+            teknologi dan telekomunikasi. Perusahaan ini dipilih
+            sebagai target simulasi lamaran kerja karena memiliki
+            keterkaitan dengan latar belakang pendidikan Teknologi
+            Telekomunikasi dan minat saya pada pengembangan sistem.
+        </p>
+
+        <br>
+
+        <p>
+            <b>Posisi yang dituju dalam simulasi lamaran:</b>
+        </p>
+
+        <div>
+            <span class="tag">Sales Engineer</span>
+            <span class="tag">Software Engineer</span>
+            <span class="tag">IT Support</span>
+        </div>
+
+        <br>
+
+        <p style="font-size:12px">
+            Catatan: Ketiga posisi tersebut merupakan pilihan untuk
+            simulasi tugas assessment, bukan pernyataan bahwa seluruh
+            posisi sedang dibuka oleh perusahaan.
+        </p>
+
+        <br>
+
+        <a href="https://www.inti.co.id/"
+           target="_blank"
+           class="cert-link">
+            Website Resmi PT INTI ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CURRICULUM VITAE -->
+<section class="container reveal" id="cv">
+
+    <div class="section-label">
+        01 / Complete CV
+    </div>
+
+    <h2 class="section-title">
+        Curriculum Vitae
+    </h2>
+
+    <p class="section-desc">
+        Informasi profil, pendidikan, kompetensi, proyek,
+        sertifikasi, serta pengalaman organisasi dan kepanitiaan.
+    </p>
+
+    <div class="card">
+
+        <div class="cv-block">
+
+            <h3>Profil Diri</h3>
+
+            <p>
+                Hadi Dermawan merupakan mahasiswa D3 Teknologi
+                Telekomunikasi di Telkom University Bandung. Memiliki
+                pengalaman dalam perancangan dan implementasi sistem
+                informasi berbasis web menggunakan PHP, MySQL, HTML,
+                CSS, JavaScript, dan Chart.js. Aktif dalam organisasi
+                dan kepanitiaan yang mengembangkan kemampuan komunikasi,
+                koordinasi, serta kepemimpinan. Memiliki ketertarikan
+                untuk mengembangkan karier pada bidang Sales Engineering,
+                Software Engineering, dan IT Support.
+            </p>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Informasi Pribadi</h3>
+
+            <p><b>Nama:</b> Hadi Dermawan</p>
+            <p><b>Tempat, tanggal lahir:</b> Cianjur, 31 Maret 2006</p>
+            <p><b>Domisili:</b> Bandung</p>
+            <p><b>Email:</b> hadidermawan@gmail.com</p>
+            <p><b>Telepon:</b> 085295210574</p>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Riwayat Pendidikan</h3>
+
+            <p><b>Telkom University Bandung</b></p>
+            <p>D3 Teknologi Telekomunikasi</p>
+            <p>2024–2027 (perkiraan lulus)</p>
+            <p>IPK sementara 3,00 hingga Semester 4</p>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Hard Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">PHP</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">Chart.js</span>
+                <span class="skill">Microsoft Word</span>
+                <span class="skill">Microsoft Excel</span>
+                <span class="skill">Microsoft PowerPoint</span>
+            </div>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Soft Skills</h3>
+
+            <div class="skill-list">
+                <span class="skill">Public Speaking</span>
+                <span class="skill">Team Leadership</span>
+                <span class="skill">Customer Communication</span>
+            </div>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Sertifikat dan Pelatihan</h3>
+
+            <p>
+                AWS Academy Graduate – Cloud Foundations
+            </p>
+
+            <p>
+                AWS Academy · 20 jam pelatihan · 24 Desember 2025
+            </p>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Proyek Terbaik</h3>
+
+            <ol class="cv-list">
+
+                <li>
+                    <b>
+                        Sistem Informasi Monitoring Kinerja Sales Force
+                        Berbasis Web
+                    </b>
+                    pada PT Alta Karisma Tridaya.
+                    Teknologi: PHP, MySQL, HTML, CSS, JavaScript, Chart.js.
+                </li>
+
+                <li>
+                    <b>Aplikasi Web Pemesanan Tiket Kereta Api.</b>
+                    Kontribusi pada penyusunan laporan dan dokumentasi
+                    proyek. Teknologi yang dibahas: HTML, CSS, JavaScript.
+                </li>
+
+                <li>
+                    <b>
+                        Implementasi Absensi Cerdas Berbasis RFID
+                        dengan Google Sheets.
+                    </b>
+                    Kontribusi pada penyusunan laporan dan dokumentasi
+                    proyek. Teknologi yang dibahas: ESP32/Arduino,
+                    RFID, Google Sheets.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Pengalaman Organisasi</h3>
+
+            <p>
+                Himpunan Mahasiswa — Staff Departemen PSDM.
+            </p>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Pengalaman Kepanitiaan</h3>
+
+            <ul class="cv-list">
+                <li>NEAX (Orientasi Studi Jurusan) — Staff Discipline Motivation Team.</li>
+                <li>TELU Camp — Divisi Logistik.</li>
+                <li>DYNAMIC (Dies Natalis HIMA) — Koordinator Public Relations.</li>
+                <li>Charity — Koordinator Logistik.</li>
+                <li>PKKMB Program Studi — Wakil Ketua.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="cv-block">
+
+            <h3>Kontak Profesional</h3>
+
+            <p>Email: hadidermawan@gmail.com</p>
+            <p>Telepon: 085295210574</p>
+            <p>Domisili: Bandung, Jawa Barat, Indonesia</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="container reveal" id="projects">
+
+    <div class="section-label">
+        02 / Selected Works
+    </div>
+
+    <h2 class="section-title">
+        Proyek Terpilih
+    </h2>
+
+    <div class="grid">
+
+        <!-- PROJECT 01 -->
+        <article class="card project">
+
+            <div class="project-number">
+                PROJECT 01 · MAIN PROJECT
+            </div>
+
+            <h3>
+                Sistem Informasi Monitoring Kinerja Sales Force Berbasis Web
+            </h3>
+
+            <p>
+                Perancangan dan implementasi sistem informasi monitoring
+                kinerja Sales Force pada PT Alta Karisma Tridaya.
+            </p>
+
+            <div>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Chart.js</span>
+            </div>
+
+            <button class="toggle" onclick="toggleProject(this)">
+                Lihat detail +
+            </button>
+
+            <div class="detail">
+
+                <p>
+                    <b>Peran:</b> Terlibat dalam seluruh proses
+                    perancangan dan implementasi sistem.
+                </p>
+
+                <p>
+                    <b>Deskripsi:</b> Sistem berbasis web untuk
+                    pengelolaan data penjualan dan pemantauan kinerja
+                    Sales, menggunakan database MySQL dan dashboard
+                    visualisasi Chart.js.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+        <article class="card project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Aplikasi Web Pemesanan Tiket Kereta Api
+            </h3>
+
+            <p>
+                Proyek akademik mengenai aplikasi web pemesanan tiket
+                kereta api.
+            </p>
+
+            <div>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+
+            <button class="toggle" onclick="toggleProject(this)">
+                Lihat detail +
+            </button>
+
+            <div class="detail">
+
+                <p>
+                    <b>Peran:</b> Penyusunan laporan dan dokumentasi
+                    proyek, bukan implementasi aplikasi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+        <article class="card project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Implementasi Absensi Cerdas Berbasis RFID dengan Google Sheets
+            </h3>
+
+            <p>
+                Proyek akademik sistem absensi berbasis RFID
+                dengan pencatatan data.
+            </p>
+
+            <div>
+                <span class="tag">ESP32 / Arduino</span>
+                <span class="tag">RFID</span>
+                <span class="tag">Google Sheets</span>
+            </div>
+
+            <button class="toggle" onclick="toggleProject(this)">
+                Lihat detail +
+            </button>
+
+            <div class="detail">
+
+                <p>
+                    <b>Peran:</b> Penyusunan laporan dan dokumentasi
+                    teknis, bukan implementasi sistem.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="container reveal" id="experience">
+
+    <div class="section-label">
+        03 / Experience
+    </div>
+
+    <h2 class="section-title">
+        Organisasi & Kepanitiaan
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Pengalaman Organisasi</h3>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h4>Himpunan Mahasiswa</h4>
+                    <p>Staff Departemen PSDM</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Pengalaman Kepanitiaan</h3>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h4>NEAX – Orientasi Studi Jurusan</h4>
+                    <p>Staff Discipline Motivation Team</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>TELU Camp</h4>
+                    <p>Divisi Logistik</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>DYNAMIC – Dies Natalis HIMA</h4>
+                    <p>Koordinator Public Relations</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>Charity</h4>
+                    <p>Koordinator Logistik</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>PKKMB Program Studi</h4>
+                    <p>Wakil Ketua</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATE -->
+<section class="container reveal" id="certificate">
+
+    <div class="section-label">
+        04 / Certification
+    </div>
+
+    <h2 class="section-title">
+        Sertifikat
+    </h2>
+
+    <div class="card cert-card">
+
+        <div>
+
+            <h3>AWS Academy Graduate – Cloud Foundations</h3>
+
+            <p>
+                AWS Academy · 20 jam pelatihan · 24 Desember 2025
+            </p>
+
+            <span class="tag">
+                Cloud Foundations
+            </span>
+
+        </div>
+
+        <a href="AWS_Certificate_Hadi_Dermawan.pdf"
+           target="_blank"
+           class="cert-link">
+            Lihat Sertifikat ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CAREER -->
+<section class="container reveal" id="career">
+
+    <div class="section-label">
+        05 / Career Direction
+    </div>
+
+    <h2 class="section-title">
+        Posisi yang Dituju
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Sales Engineer</h3>
+
+            <p>
+                Menggabungkan pemahaman teknologi dan komunikasi
+                untuk menjelaskan solusi teknis serta memahami
+                kebutuhan pelanggan.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Software Engineer</h3>
+
+            <p>
+                Mengembangkan kemampuan membangun aplikasi dan sistem
+                berbasis web menggunakan PHP, MySQL, JavaScript,
+                dan teknologi pendukung.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>IT Support</h3>
+
+            <p>
+                Mengembangkan kemampuan memberikan dukungan teknis,
+                memahami kebutuhan pengguna, dan membantu menyelesaikan
+                permasalahan teknologi.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ASSESSMENT QUESTIONS -->
+<section class="container reveal" id="answers">
+
+    <div class="section-label">
+        06 / Assessment Questions
+    </div>
+
+    <h2 class="section-title">
+        Jawaban Pertanyaan Pendukung
+    </h2>
+
+
+    <details class="question">
+
+        <summary>
+            1. Posisi apa yang Anda lamar dan mengapa memilih posisi tersebut?
+        </summary>
+
+        <p>
+            Saya tertarik pada posisi Sales Engineer, Software Engineer,
+            dan IT Support karena ketiganya memiliki keterkaitan
+            dengan latar belakang pendidikan Teknologi Telekomunikasi
+            serta minat saya pada penerapan teknologi untuk membantu
+            menyelesaikan kebutuhan pengguna.
+        </p>
+
+    </details>
+
+
+    <details class="question">
+
+        <summary>
+            2. Kompetensi utama apa yang Anda miliki?
+        </summary>
+
+        <p>
+            Kompetensi saya meliputi dasar pengembangan web menggunakan
+            HTML, CSS, JavaScript, PHP, dan MySQL, visualisasi data
+            menggunakan Chart.js, serta public speaking, team leadership,
+            dan customer communication.
+        </p>
+
+    </details>
+
+
+    <details class="question">
+
+        <summary>
+            3. Proyek mana yang paling menunjukkan kemampuan Anda?
+        </summary>
+
+        <p>
+            Proyek Sistem Informasi Monitoring Kinerja Sales Force
+            Berbasis Web pada PT Alta Karisma Tridaya paling
+            menunjukkan kemampuan saya karena melibatkan perancangan
+            dan implementasi sistem, database MySQL, antarmuka,
+            serta dashboard visualisasi menggunakan Chart.js.
+        </p>
+
+    </details>
+
+
+    <details class="question">
+
+        <summary>
+            4. Mengapa perusahaan harus memilih Anda?
+        </summary>
+
+        <p>
+            Saya memiliki dasar pendidikan di bidang telekomunikasi,
+            pengalaman proyek pengembangan sistem berbasis web,
+            serta pengalaman organisasi dan kepanitiaan. Saya
+            terbiasa bekerja dalam tim, berkoordinasi, berkomunikasi,
+            dan memiliki kemauan untuk terus belajar serta beradaptasi.
+        </p>
+
+    </details>
+
+
+    <details class="question">
+
+        <summary>
+            5. Apa rencana pengembangan karier dalam 3–5 tahun ke depan?
+        </summary>
+
+        <p>
+            Dalam 3–5 tahun ke depan, saya ingin memperdalam
+            kompetensi teknis dan memperoleh pengalaman profesional
+            yang relevan. Saya berencana meningkatkan kemampuan
+            pengembangan sistem, pemahaman teknologi, serta komunikasi
+            profesional agar dapat mengambil tanggung jawab lebih
+            besar dan memberikan solusi teknologi yang efektif.
+        </p>
+
+    </details>
+
+</section>
+
+
+<!-- COVER LETTER -->
+<section class="container reveal" id="letter">
+
+    <div class="section-label">
+        07 / Application
+    </div>
+
+    <h2 class="section-title">
+        Cover Letter
+    </h2>
+
+    <div class="card letter">
+
+        <p>
+            Yth. Tim Rekrutmen<br>
+            PT Industri Telekomunikasi Indonesia (Persero)<br>
+            Bandung
+        </p>
+
+        <p>
+            Dengan hormat,
+        </p>
+
+        <p>
+            Saya, Hadi Dermawan, mahasiswa D3 Teknologi Telekomunikasi
+            di Telkom University Bandung, bermaksud mengajukan lamaran
+            untuk dipertimbangkan pada posisi Sales Engineer,
+            Software Engineer, atau IT Support sesuai kebutuhan dan
+            kualifikasi perusahaan.
+        </p>
+
+        <p>
+            Saya memiliki pengalaman dalam perancangan dan
+            implementasi Sistem Informasi Monitoring Kinerja
+            Sales Force berbasis web menggunakan PHP, MySQL,
+            HTML, CSS, JavaScript, dan Chart.js.
+        </p>
+
+        <p>
+            Selain itu, saya memiliki pengalaman penyusunan
+            dokumentasi teknis untuk proyek akademik serta
+            keterlibatan dalam organisasi dan kepanitiaan.
+            Saya juga telah menyelesaikan pelatihan AWS Academy
+            Cloud Foundations.
+        </p>
+
+        <p>
+            Saya memiliki motivasi untuk terus belajar,
+            mengembangkan kompetensi, dan berkontribusi secara
+            profesional sesuai kebutuhan perusahaan.
+        </p>
+
+        <p>
+            Besar harapan saya untuk memperoleh kesempatan
+            mengikuti proses seleksi dan menjelaskan kualifikasi
+            saya lebih lanjut. Terima kasih atas waktu dan
+            perhatian Bapak/Ibu.
+        </p>
+
+        <p>
+            Hormat saya,<br>
+            <b>Hadi Dermawan</b>
+        </p>
+
+        <p>
+            <small>
+                Catatan: Surat ini merupakan cover letter simulasi
+                untuk tugas assessment. Untuk lamaran nyata, pilih
+                satu posisi yang sedang dibuka dan sesuaikan isi surat
+                dengan persyaratan lowongan.
+            </small>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="container reveal" id="contact">
+
+    <div class="section-label">
+        08 / Contact
+    </div>
+
+    <h2 class="section-title">
+        Kontak Profesional
+    </h2>
+
+    <div class="contact-grid">
+
+        <div class="contact-item">
+            <span>Email</span>
+            <strong>hadidermawan@gmail.com</strong>
+        </div>
+
+        <div class="contact-item">
+            <span>Telepon</span>
+            <strong>085295210574</strong>
+        </div>
+
+        <div class="contact-item">
+            <span>Domisili</span>
+            <strong>Bandung, Jawa Barat, Indonesia</strong>
+        </div>
+
+        <div class="contact-item">
+            <span>Institusi</span>
+            <strong>Telkom University Bandung</strong>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Hadi Dermawan · Professional Portfolio
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+// MENU MOBILE
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+}
+
+// TUTUP MENU SETELAH LINK DIKLIK
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('show');
+    });
+
+});
+
+
+// DETAIL PROYEK
+function toggleProject(button) {
+
+    const card = button.closest('.project');
+
+    card.classList.toggle('open');
+
+    button.textContent = card.classList.contains('open')
+        ? 'Tutup detail −'
+        : 'Lihat detail +';
+
+}
+
+
+// ANIMASI SAAT SCROLL
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add('visible');
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
